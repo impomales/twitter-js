@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/impomales/twitter-js/issues"
   },
-  "homepage": "https://github.com/impomales/twitter-js#readme"
+  "homepage": "https://github.com/impomales/twitter-js#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
