@@ -19,7 +19,9 @@ const getFakeTweet = function() {
 
 module.exports = {
   add: function(name, content) {
-    data.push({ id: data.length + 1, name, content })
+    const id = data.length + 1;
+    data.push({ id, name, content })
+    return id;
   },
   list: function() {
     return _.cloneDeep(data);

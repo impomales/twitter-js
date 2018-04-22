@@ -1,6 +1,7 @@
 const express = require('express');
 const chalk = require('chalk');
 const nunjucks = require('nunjucks');
+const socketio = require('socket.io');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 const app = express();
@@ -17,8 +18,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/', routes);
-
-app.listen(3000, () => {
+const server = app.listen(3000, () => {
   console.log('server listening');
 });
+
+const io = socketio.listen(server);
+
+app.use('/', routes(io));
