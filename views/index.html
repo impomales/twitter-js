@@ -15,7 +15,18 @@
 
       <!-- display tweets here -->
       {% for tweet in tweets %}
-        <li>{{tweet.content}}</li>
+        <div class="tweetbox">
+          <img id="tweet-img" src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/1163/s300/course-report-fullstack-academy-600-600.png" alt="img" />
+          <div class="content">
+              <a href="/users/{{ tweet.name }}">
+                <p class="by">{{ tweet.name }}</p>
+              </a>
+              <a href="/tweets/{{ tweet.id }}">
+                <p>{{tweet.content}}</p>
+              </a>
+          </div>
+
+        </div>
       {% endfor %}
 
     </div>
