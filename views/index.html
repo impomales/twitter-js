@@ -13,6 +13,21 @@
     </div>
     <div class="col-md-9">
 
+      {% if showForm %}
+        <form action="/tweets" method="POST">
+          <label for="name_field">Name:</label>
+          {% if name %}
+          <input name="name" type="text" value="{{ name }}" id="name_field" />
+          {% else %}
+          <input name="name" type="text" id="name_field" />
+          {% endif %}
+          <label for="text_field">Text:</label>
+          <input name="text" type="text" id="text_field" style="width: 350px;" />
+
+          <input type="submit" value="Submit" />
+        </form>
+      {% endif %}
+
       <!-- display tweets here -->
       {% for tweet in tweets %}
         <div class="tweetbox">

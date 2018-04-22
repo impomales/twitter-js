@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/impomales/twitter-js#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "chalk": "^2.4.0",
     "express": "^4.16.3",
     "lodash": "^4.17.5",

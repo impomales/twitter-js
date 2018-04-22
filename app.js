@@ -1,6 +1,7 @@
 const express = require('express');
 const chalk = require('chalk');
 const nunjucks = require('nunjucks');
+const bodyParser = require('body-parser');
 const routes = require('./routes');
 const app = express();
 
@@ -9,6 +10,7 @@ app.engine('html', nunjucks.render)
 nunjucks.configure('views', { noCache: true });
 
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
   console.log(chalk.green(req.method), chalk.blue(req.path));
